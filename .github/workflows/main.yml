@@ -42,8 +42,8 @@ jobs:
         run: |
           # Get latest LKMs
           echo "Getting latest LKMs"
-          TAG=`curl -s https://api.github.com/repos/fbelavenuto/redpill-lkm/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
-          STATUS=`curl -w "%{http_code}" -L "https://github.com/fbelavenuto/redpill-lkm/releases/download/${TAG}/rp-lkms.zip" -o /tmp/rp-lkms.zip`
+          TAG=`curl -s https://api.github.com/repos/ranydb/redpill-lkm/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3)}'`
+          STATUS=`curl -w "%{http_code}" -L "https://github.com/ranydb/redpill-lkm/releases/download/${TAG}/rp-lkms.zip" -o /tmp/rp-lkms.zip`
           echo "Status=${STATUS}"
           [ ${STATUS} -ne 200 ] && exit 1
 
